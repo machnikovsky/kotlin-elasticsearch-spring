@@ -14,4 +14,6 @@ docker-compose up
 - Adding all CRUD operations
 - Adding security
 - Adding search bar
+- Deploying app
+- Adding CI/CD
 
