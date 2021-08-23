@@ -4,10 +4,9 @@ services:
   kotlin-backend:
     build: ./kotlin-backend
     container_name: kotlin-backend
+    restart: on-failure
     ports:
       - 8080:8080
-    depends_on:
-      - es01
     networks:
       - elastic
 

@@ -4,5 +4,8 @@ import org.springframework.data.annotation.Id
 import org.springframework.data.elasticsearch.annotations.Document
 
 @Document(indexName = "blogger")
-data class Blogger(@Id val bloggerId: String, val firstName: String, val lastName: String)
+class Blogger(val firstName: String, val lastName: String) {
+    @Id
+    val bloggerId: String = ""
+}
 
