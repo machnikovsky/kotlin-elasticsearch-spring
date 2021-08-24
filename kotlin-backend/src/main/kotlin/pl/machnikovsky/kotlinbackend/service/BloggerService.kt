@@ -9,18 +9,22 @@ import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilde
 import org.springframework.data.elasticsearch.core.query.Query
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
+import pl.machnikovsky.kotlinbackend.mapper.BloggerMapper
 import pl.machnikovsky.kotlinbackend.model.Blogger
+import pl.machnikovsky.kotlinbackend.model.BloggerDTO
 import pl.machnikovsky.kotlinbackend.repository.BloggerRepository
 
 
 @Service
-class BloggerService(val bloggerRepository: BloggerRepository, val elasticsearchOperations: ElasticsearchOperations) {
+class BloggerService(private val bloggerRepository: BloggerRepository,
+                     private val bloggerMapper: BloggerMapper,
+                     private val elasticsearchOperations: ElasticsearchOperations) {
 
     private val bloggerIndex: String = "blogger"
 
     fun getAllBloggers(): List<Blogger> = bloggerRepository.findAll().toList()
     fun getBloggerById(id: String): Blogger? = bloggerRepository.findByIdOrNull(id)
-    fun addNewBlogger(blogger: Blogger): Blogger = bloggerRepository.save(blogger)
+    fun addNewBlogger(newBlogger: BloggerDTO): Blogger = bloggerRepository.save(bloggerMapper.fromDTO(newBlogger))
 
     fun findByWildCard(firstName: String): List<Blogger> {
         val queryBuilder = QueryBuilders

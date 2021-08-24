@@ -2,6 +2,7 @@ package pl.machnikovsky.kotlinbackend.controller
 
 import org.springframework.web.bind.annotation.*
 import pl.machnikovsky.kotlinbackend.model.Blogger
+import pl.machnikovsky.kotlinbackend.model.BloggerDTO
 import pl.machnikovsky.kotlinbackend.service.BloggerService
 
 @RestController
@@ -20,5 +21,5 @@ class BloggerController(val bloggerService: BloggerService) {
     fun getBloggerById(@PathVariable("id") id: String) = bloggerService.getBloggerById(id)
 
     @PostMapping
-    fun addNewBlogger(@RequestBody newBlogger: Blogger) = bloggerService.addNewBlogger(newBlogger)
+    fun addNewBlogger(@RequestBody newBlogger: BloggerDTO) = bloggerService.addNewBlogger(newBlogger)
 }
