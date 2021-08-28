@@ -23,10 +23,14 @@ jobs:
         cache: gradle
         
     - name: Change Gradle permissions
-      run: chmod +x gradlew
+      run: |
+        cd kotlin-backend
+        chmod +x gradlew
       
     - name: Build with Gradle
-      run: ./gradlew build
+      run: |
+        cd kotlin-backend
+        ./gradlew build
 
     - name: Build the Docker image
       run: docker-compose up
