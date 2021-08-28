@@ -27,10 +27,6 @@ jobs:
         
     - name: Disable currently working Docker Compose
       run: docker-compose down
-      
-    - name: Disable all running containers
-      if: ${{ docker ps | grep imagename | wc -l }} > 0
-      run: docker rm -f $(docker ps -aq)
 
     - name: Run Docker Compose
       run: docker-compose up -d
