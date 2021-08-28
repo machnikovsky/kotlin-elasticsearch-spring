@@ -14,13 +14,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-
-    - name: Set up JDK 11
-      uses: actions/setup-java@v2
-      with:
-        java-version: '11'
-        distribution: 'adopt'
-        cache: gradle
         
     - name: Change Gradle permissions
       run: |
@@ -34,6 +27,9 @@ jobs:
         
     - name: Disable currently working Docker Compose
       run: docker-compose down
+      
+    - name: Disable all running containers
+      run: docker rm -f $(docker ps -aq)
 
     - name: Run Docker Compose
       run: docker-compose up -d
