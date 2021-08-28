@@ -27,6 +27,9 @@ jobs:
         
     - name: Disable currently working Docker Compose
       run: docker-compose down
+      
+    - name: Build docker images
+      run: docker-compose build --no-cache
 
     - name: Run Docker Compose
       run: docker-compose up -d
