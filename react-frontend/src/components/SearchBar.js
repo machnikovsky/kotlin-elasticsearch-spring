@@ -8,7 +8,7 @@ const SearchBar = () => {
     useEffect(() => {
         const abortController = new AbortController();
 
-        fetch(`http://kotlin-backend:8080/blogger/match/${username}`, {
+        fetch(`/blogger/match/${username}`, {
             signal: abortController.signal,
             method: 'GET'
         })
