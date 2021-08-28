@@ -1,0 +1,38 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  build:
+
+    runs-on: self-hosted
+
+    steps:
+    - uses: actions/checkout@v2
+        
+    - name: Change Gradle permissions
+      run: |
+        cd kotlin-backend
+        chmod +x gradlew
+      
+    - name: Build with Gradle
+      run: |
+        cd kotlin-backend
+        ./gradlew build
+        
+    - name: Disable currently working Docker Compose
+      run: docker-compose down
+
+    - name: Run Docker Compose
+      run: docker-compose up -d
+        
+    - name: Check running containers
+      run: docker ps -a
+    
+    - name: reload NginX
+      run: sudo systemctl reload nginx
