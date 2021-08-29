@@ -1,7 +1,7 @@
 ## Live version
 
 Working application is available here: 
-[zajavva.pl](http://www.zajavva.pl)
+[zajavva.pl](https://www.zajavva.pl)
 
 ## How to run
 ```
@@ -11,7 +11,7 @@ docker-compose up
 ## Technologies used
 🍅 Kotlin  
 🕸️ Elasticsearch  
-📊 Graphana  
+📊 Grafana  
 🍃 Spring  
 ⚛ React  
 
@@ -20,7 +20,7 @@ docker-compose up
 - :3000 - React frontend port
 - :9200 - Elasticsearch port
 - :5601 - Kibana port
-- :4000 - Graphana port
+- :4000 - Grafana port
 - :9090 - Prometheus port
 
 ## Future development plans
