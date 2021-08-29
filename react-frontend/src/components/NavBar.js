@@ -1,7 +1,7 @@
 const NavBar = () => {
     return (
         <div className="nav-bar">
-          Welcome to frontend from ci/cd!
+          Welcome to frontend from CI/CD!
         </div>
       );
 }
