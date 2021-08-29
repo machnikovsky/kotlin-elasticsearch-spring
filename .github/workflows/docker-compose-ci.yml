@@ -26,10 +26,10 @@ jobs:
         ./gradlew build
         
     - name: Disable currently working Docker Compose
-      run: docker-compose down
+      run: docker-compose -f docker-compose-prod.yml down
       
     - name: Build docker images
-      run: docker-compose build
+      run: docker-compose -f docker-compose-prod.yml build
 
     - name: Run Docker Compose
       run: docker-compose -f docker-compose-prod.yml up -d
