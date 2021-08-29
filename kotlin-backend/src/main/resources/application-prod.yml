@@ -11,3 +11,6 @@ management:
   metrics:
     tag:
       application: kotlin-blog
+
+elastic.hostname: "es01"
+elastic.port: "9200"

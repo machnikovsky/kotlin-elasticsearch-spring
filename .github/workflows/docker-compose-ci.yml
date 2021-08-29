@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Deploy
 
 on:
   push:
@@ -32,7 +32,7 @@ jobs:
       run: docker-compose build
 
     - name: Run Docker Compose
-      run: docker-compose up -d
+      run: docker-compose -f docker-compose-prod.yml up -d
         
     - name: Check running containers
       run: docker ps -a
