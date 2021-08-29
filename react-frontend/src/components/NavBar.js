@@ -1,8 +1,14 @@
+import { Link } from 'react-router-dom';
+
 const NavBar = () => {
     return (
+      <div className="wrapper">
         <div className="nav-bar">
-          Welcome to frontend from CI/CD!
+            <div className="logo">
+              <Link to="/">zajavva</Link>
+            </div>
         </div>
+      </div>
       );
 }
 
