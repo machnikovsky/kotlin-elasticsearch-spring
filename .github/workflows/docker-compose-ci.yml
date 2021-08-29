@@ -36,6 +36,3 @@ jobs:
         
     - name: Check running containers
       run: docker ps -a
-    
-    - name: reload NginX
-      run: sudo systemctl reload nginx
