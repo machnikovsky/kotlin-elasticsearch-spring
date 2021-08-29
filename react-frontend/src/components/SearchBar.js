@@ -23,8 +23,9 @@ const SearchBar = () => {
         });
     }, [username])
 
+
     return (
-        <div>
+        <div className="search">
             <form>
                 <label>Enter an username: </label>
                 <input
@@ -34,7 +35,6 @@ const SearchBar = () => {
                     placeholder="Username..."
                     onChange={e => setUsername(e.target.value)}
                 />
-                <button type="submit">Search</button>
             </form>
             { users && (
                     users.map(u => (

@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus
+    health:
+      show-details: always
+  metrics:
+    tag:
+      application: kotlin-blog
+
+elastic.hostname: "localhost"
+elastic.port: "9200"

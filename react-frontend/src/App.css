@@ -1,47 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,300&display=swap');
+
+* {
+  margin: 0;
+  font-family: 'Fira Sans', sans-serif;
+  color: #111111;
+}
+
+body {
+  background-color: lightslategray;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.wrapper {
+  margin-bottom: 50px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav-bar a {
+  text-decoration: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-.nav-bar {
+.nav-bar .logo {
+  color: #000;
+  font-size: 30px;
   display: inline-block;
   margin: 50px;
   padding: 20px;
-  width: 200px;
+  width: 100px;
   border-radius: 4%;
-  background-color: rgb(180, 180, 180);
+  background-color: rgb(180, 180, 180, 0.6);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav-bar {
+  border-bottom: 5px solid rgb(180, 180, 180, 0.6);
+  width: 70%;
+  margin: 0 auto;
+}
+
+
+.modules h1 {
+  color: rgb(100, 100, 100);
+}
+
+.modules .links {
+  margin-left: auto;
+}
+
+.modules a {
+  margin-left: 16px;
+  text-decoration: none;
+  padding: 6px;
+}
+.modules a:hover {
+  color: #555555;
+}
+
+.add, .search {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+.add label, .search label {
+  text-align: left;
+  display: block;
+}
+.add h2, .search h2 {
+  font-size: 20px;
+  color: #333333;
+  margin-bottom: 30px;
+}
+.add input, .add textarea, .add select, .search input, .search textarea {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+}
+.add button {
+  background: #444444;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.user {
+  margin: 25px;
 }
