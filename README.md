@@ -1,3 +1,8 @@
+## Live version
+
+Working application is available here: 
+[zajavva.pl](http://www.zajavva.pl)
+
 ## How to run
 ```
 docker-compose up
@@ -19,10 +24,10 @@ docker-compose up
 - :9090 - Prometheus port
 
 ## Future development plans
-- Adding frontend (React)
+- <s>Adding frontend (React)</s>
 - Adding all CRUD operations
 - Adding security
-- Adding search bar
-- Deploying app
-- Adding CI/CD
+- <s>Adding search bar</s>
+- <s>Deploying app</s>
+- <s>Adding CI/CD</s>
 
